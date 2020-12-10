@@ -17,7 +17,7 @@ namespace BlazorCRUD.Server.Migrations
                     Problem = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     AppointmentDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Amount = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Amount = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>
                 {

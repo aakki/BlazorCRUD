@@ -12,10 +12,13 @@ namespace BlazorCRUD.Shared.Appointment
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+        [Required]
         public string PatientName { get; set; }
+        [Required]
         public string Problem { get; set; }
         public DateTime CreatedDate { get; set; } = new DateTime();
         public DateTime AppointmentDate { get; set; } = new DateTime();
-        public string Amount { get; set; }
+        [Required]
+        public double Amount { get; set; }
     }
 }

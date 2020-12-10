@@ -1,26 +1,26 @@
 ﻿<EditForm Model="@appointment" OnValidSubmit="@OnValidSubmit">
-    @*<DataAnnotationsValidator />*@
+    <DataAnnotationsValidator />
     <div class="form-group">
-        <label>Patient Name :</label>
+        <label for="patientName">Patient Name :</label>
         <div>
-            <InputText @bind-Value="@appointment.PatientName" />
+            <InputText id="patientName" @bind-Value="@appointment.PatientName" />
             <ValidationMessage For="@(() => appointment.PatientName)" />
         </div>
     </div>
-    @*<div class="form-group ">
+    <div class="form-group ">
         <div>
             <label>Appointment Date :</label>
             <div>
-                <InputText @bind-Value="@appointment.AppointmentDate" />
+                <InputDate @bind-Value="@appointment.AppointmentDate" />
                 <ValidationMessage For="@(() => appointment.AppointmentDate)" />
             </div>
         </div>
-    </div>*@
+    </div>
     <div class="form-group ">
         <div>
-            <label>Problem :</label>
+            <label for="problem">Problem :</label>
             <div>
-                <InputText @bind-Value="@appointment.Problem" />
+                <InputText id="problem" @bind-Value="@appointment.Problem" />
                 <ValidationMessage For="@(() => appointment.Problem)" />
             </div>
         </div>
@@ -29,7 +29,7 @@
         <div>
             <label>Amount :</label>
             <div>
-                <InputText @bind-Value="@appointment.Amount" />
+                <InputNumber @bind-Value="@appointment.Amount" />
                 <ValidationMessage For="@(() => appointment.Amount)" />
             </div>
         </div>

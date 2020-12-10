@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlazorCRUD.Server.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20201210082929_Initial")]
+    [Migration("20201210132431_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,9 +28,8 @@ namespace BlazorCRUD.Server.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<string>("Amount")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<double>("Amount")
+                        .HasColumnType("float");
 
                     b.Property<DateTime>("AppointmentDate")
                         .HasColumnType("datetime2");
