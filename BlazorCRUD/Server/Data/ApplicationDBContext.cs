@@ -1,9 +1,7 @@
 ﻿using BlazorCRUD.Shared.Appointment;
+using BlazorCRUD.Shared.Disease;
+using BlazorCRUD.Shared.Patient;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace BlazorCRUD.Server.Data
 {
@@ -13,6 +11,8 @@ namespace BlazorCRUD.Server.Data
         {
         }
         public virtual DbSet<Appointment> tblAppointments { get; set; }
+        public virtual DbSet<Disease> tblDiseases { get; set; }
+        public virtual DbSet<Patient> tblPatients { get; set; }
 
     }
 }
