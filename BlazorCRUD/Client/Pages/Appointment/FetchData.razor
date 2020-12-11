@@ -10,46 +10,46 @@
 <br>
 
 @if (appointments == null)
-{
-    <text>Loading...</text>
-}
-else if (appointments.Length == 0)
-{
-    <text>No Records Found.</text>
-}
-else
-{
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Patient Name</th>
-                <th>Problem</th>
-                <th>AppointmentDate</th>
-                <th>Bill Amount</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (Appointment appointment in appointments)
-            {
+    {
+        <text>Loading...</text>
+    }
+    else if (appointments.Length == 0)
+    {
+        <text>No Records Found.</text>
+    }
+    else
+    {
+        <table class="table table-striped">
+            <thead>
                 <tr>
-                    <td>@appointment.Id</td>
-                    <td>@appointment.PatientName</td>
-                    <td>@appointment.Problem</td>
-                    <td>@appointment.AppointmentDate</td>
-                    <td>@appointment.Amount</td>
-                    <td>
-                        <a class="btn btn-success" href="appointment/edit/@appointment.Id">Edit</a>
-                        <button class="btn btn-danger" @onclick="@(() => Delete(appointment.Id))">Delete</button>
-                    </td>
+                    <th>Id</th>
+                    <th>Patient Name</th>
+                    <th>Problem</th>
+                    <th>AppointmentDate</th>
+                    <th>Bill Amount</th>
+                    <th></th>
                 </tr>
-                
-            }
+            </thead>
+            <tbody>
+                @foreach (Appointment appointment in appointments)
+                {
+                    <tr>
+                        <td>@appointment.Id</td>
+                        <td>@appointment.PatientName</td>
+                        <td>@appointment.Problem</td>
+                        <td>@appointment.AppointmentDate</td>
+                        <td>@appointment.Amount</td>
+                        <td>
+                            <a class="btn btn-success" href="appointment/edit/@appointment.Id">Edit</a>
+                            <button class="btn btn-danger" @onclick="@(() => Delete(appointment.Id))">Delete</button>
+                        </td>
+                    </tr>
 
-        </tbody>
-    </table>
-}
+                }
+
+            </tbody>
+        </table>
+    }
 @code {
     Appointment[] appointments { get; set; }
     protected override async Task OnInitializedAsync()

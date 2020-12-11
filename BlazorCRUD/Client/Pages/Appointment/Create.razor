@@ -2,10 +2,14 @@
 @inject HttpClient http
 @inject NavigationManager uriHelper
 <h3>Create</h3>
-<Form ButtonText="Create Developer" appointment="@appointment"
+<Form ButtonText="Create Appointment" appointment="@appointment"
       OnValidSubmit="@CreateAppointment" />
 @code {
     Appointment appointment = new Appointment();
+    protected override void OnInitialized()
+    {
+        appointment.AppointmentDate = DateTime.Now;
+    } 
     async Task CreateAppointment()
     {
         await http.PostAsJsonAsync("api/appointment", appointment);

@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using System.Linq;
 using BlazorCRUD.Server.Data;
 using Microsoft.EntityFrameworkCore;
+using BlazorTable;
 
 namespace BlazorCRUD.Server
 {
@@ -29,6 +30,7 @@ namespace BlazorCRUD.Server
             services.AddControllersWithViews();
             services.AddRazorPages();
             services.AddDbContext<ApplicationDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddBlazorTable();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
